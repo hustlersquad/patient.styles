@@ -1,0 +1,35 @@
+sets:
+  - name: Core
+    colours:
+      - name: blue
+        hex:  "#009BF5"
+      - name: navy
+        hex:  "#0F2E4C"
+
+  - name: Neutral
+    colours:
+      - name: white
+        hex: "#FFFFFF"
+      - name: grey
+        hex:  "#EEEEEE"
+      - name: black
+        hex:  "#333333"
+
+  - name: Extended
+    colours:
+      - name: red
+        hex:  "#FF3344"
+      - name: orange
+        hex:  "#FF7F00"
+      - name: yellow
+        hex:  "#FFD500"
+      - name: green
+        hex:  "#44AB11"
+      - name: teal
+        hex:  "#00D9BC"
+      - name: purple
+        hex:  "#7F66FF"
+      - name: violet
+        hex:  "#C24CD9"
+      - name: pink
+        hex:  "#FF4C9D"

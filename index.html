@@ -1,0 +1,116 @@
+---
+---
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ site.title }}</title>
+        <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+
+        <div class="colour-palette">
+          <h2>Colour palette</h2>
+
+          {% for set in site.sets %}
+          <h3>{{ set.name }}</h3>
+          <ul class="palette">
+            {% for colour in set.colours %}
+            <li style="background-color: {{ colour.hex }}"><p>{{ colour.hex }}</p></li>
+            {% endfor %}
+          </ul>
+          {% endfor %}
+        </div>
+
+        <div>
+          <h2>Typography</h2>
+
+          <h3>Headings</h3>
+          <ul class="notes">
+            <li>font-family: "<a href="http://www.latofonts.com/download/Lato2OFL.zip">Lato-Bold</a>";</li>
+            <li>color: #0F2E4C;</li>
+            <li>Relative sizing is based on the <a href="http://type-scale.com/?size=16&scale=1.250&text=A">Major Third scale</a>.</li>
+          </ul>
+          <div class="headings">
+            <h4>H1</h4>
+            <h1>Chest infection</h1>
+            <h4>H2</h4>
+            <h2>What is a chest infection and what causes it?</h2>
+            <h4>H3</h4>
+            <h3>Acute bronchitis</h3>
+            <h4>H4</h4>
+            <h4>Blog posts</h4>
+            <h4>H5</h4>
+            <h5>Further reading &amp; references</h5>
+            <h4>H6</h4>
+            <h6>Date of latest document check</h6>
+          </div>
+        </div>
+
+        <div>
+          <h3>Body text</h3>
+          <ul class="notes">
+            <li>font-family: "<a href="http://www.latofonts.com/download/Lato2OFL.zip">Lato-Regular</a>";</li>
+            <li>color: #333333</li>
+            <li>line-height: 1.6</li>
+            <li>font-size: 18px; (mobile)</li>
+            <li>font-size: 20px; (desktop)</li>
+          </ul>
+
+          <p>Cold and cough remedies often contain several ingredients. Some may make you drowsy. This may be welcome at bedtime if you have difficulty sleeping with a bronchitis. However, do not drive if you are drowsy. Some contain paracetamol, so be careful not to take more than the maximum safe dose of paracetamol if you are already taking paracetamol tablets.</p>
+
+          <p>Over-the-counter (OTC) cough and cold medicines should not be given to children aged under 6. There is no evidence that they work and they can cause side-effects, such as allergic reactions, effects on sleep, or hallucinations. These medicines are available for children aged 6-12 but they are also best avoided in this age group.</p>
+
+          <p><strong>Note:</strong> paracetamol and ibuprofen are not classed as cough and cold medicines and can still be given to children.</p>
+        </div>
+
+        <div>
+          <h3>Lists</h3>
+          <ul>
+            <li>Have plenty of rest.</li>
+            <li>Drink lots of fluid to prevent your body becoming lacking in fluids (dehydrated) and to help keep the mucus in your lungs thin and easier to cough up.</li>
+            <li>Inhale steam vapour, perhaps with added menthol. This can help to clear the mucus from your chest.</li>
+          </ul>
+          <ol>
+            <li>If a high temperature (fever), wheezing or headaches becomes worse or severe.</li>
+            <li>If you develop fast breathing, shortness of breath, or chest pains.</li>
+            <li>If you cough up blood or if your phlegm (sputum) becomes dark or rusty-coloured.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3>Links</h3>
+          <ul class="notes">
+            <li>Text links are #007BC2 which is the bright brand blue #009BF5 Sass darkened 10%.</li>
+          </ul>
+          <p><a href="">Antibiotics</a> are medicines used for infections caused by <a href="">germs (bacteria)</a> and don't work on viruses.</p>
+        </div>
+
+        <div>
+          <h2>Forms</h2>
+          <form action="/">
+            <input type="search" name="search" id="search" placeholder="Search Patient" tabindex="0">
+            <button tabindex="0">Search</button>
+          </form>
+        </div>
+
+        <div>
+          <h2>Notes</h2>
+          <ul class="notes">
+            <li>Backgrounds are #FFFFFF. Alt backgrounds are #EEEEEE or #0F2E4C.</li>
+            <li>Coloured backgrounds are ~10% tints of suitable colours from the palette.</li>
+            <li>Icons are line icons in #009BF5. I’ve been using this page for reference: <a href="http://andrejskirma.com/">http://andrejskirma.com/</a></li>
+            <li>Avoid gradients.</li>
+          </ul>
+        </div>
+
+      </div>
+    </body>
+</html>

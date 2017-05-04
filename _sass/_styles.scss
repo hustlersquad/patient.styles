@@ -1,0 +1,284 @@
+// Variables
+
+$bold: 700;
+
+$color-core-blue: #009BF5;
+$color-core-navy: #0F2E4C;
+$color-neutral-grey: #EEEEEE;
+$color-neutral-black: #333333;
+$color-extended-red: #FF3344;
+$color-extended-orange: #FF7F00;
+$color-extended-yellow: #FFD500;
+$color-extended-green: #44AB11;
+$color-extended-teal: #00D9BC;
+$color-extended-indigo: #7F66FF;
+$color-extended-purple: #C24CD9;
+$color-extended-pink: #FF4C9D;
+
+$color-ui-keyline: 1px solid #B7C0C9;
+
+$md: 32rem;
+$xl: 48rem;
+
+// Mixins
+
+@mixin container() {
+  margin: 0 auto 4em auto;
+  max-width: $xl;
+  padding: 0.5rem;
+}
+
+@mixin shadow-outline() {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+@mixin shadow-inset() {
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+// Layout
+
+.container {
+  @include container();
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem -0.5rem;
+  padding: 0;
+
+  & li {
+    flex: 0 1 calc(50% - 1rem);
+    margin: 0.5rem;
+    min-height: 4rem;
+
+    @media (min-width: $xl) {
+      flex: 0 1 calc(25% - 1rem);
+      margin: 0.5rem;
+    }
+  }
+}
+
+// Typography
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: "Lato-Regular", sans-serif;
+  font-size: 1.125em;
+
+  @media (min-width: $xl) {
+    font-size: 1.25em;
+  }
+}
+
+a {
+  color: darken( $color-core-blue, 10%);
+
+  &:visited {
+    color: darken( $color-extended-indigo, 33%);
+  }
+
+  &:hover {
+    color: $color-core-blue;
+  }
+}
+
+section {
+  border-top: 4px solid #333;
+  padding: 1em 0;
+}
+
+// Headings. Relative sizing is based on the Major Third scale: http://type-scale.com/
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-core-navy;
+  font-family: "Lato-Bold", sans-serif;
+  font-variant-ligatures: none;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.953em;
+  margin: 1em 0;
+
+  @media (min-width: $md) {
+    font-size: 2.441em;
+  }
+}
+
+h2 {
+  border-top: 4px solid #333;
+  font-size: 1.563em;
+  margin: 1em 0;
+  padding-top: 1em;
+
+  @media (min-width: $md) {
+    font-size: 1.953em;
+  }
+}
+
+h3 {
+  font-size: 1.25em;
+  margin: 1em 0;
+
+  @media (min-width: $md) {
+    font-size: 1.563em;
+  }
+}
+
+h4 {
+  font-size: 1em;
+  margin: 0.25em 0;
+
+  @media (min-width: $md) {
+    font-size: 1.25em;
+  }
+}
+
+h5 {
+  font-size: 0.8em;
+
+  @media (min-width: $md) {
+    font-size: 1em;
+  }
+}
+
+h6 {
+  font-size: 0.64em;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+
+  @media (min-width: $md) {
+    font-size: 0.8em;
+  }
+}
+
+// Body copy
+
+p {
+  margin: 1em 0;
+}
+
+
+ul, ol {
+  padding: 0.5em 0 0.5em 0.5em;
+
+  & li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+}
+
+.colour-palette {
+
+  & p {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    font-size: 0.5em;
+    letter-spacing: 0.125em;
+    margin: 0;
+    padding: 0 0.25em;
+  }
+
+  & ul {
+    list-style-type: none;
+  }
+}
+
+.headings {
+
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    margin: 0 0 0.5em 0;
+  }
+
+  & h2 {
+    border: none;
+    padding: 0;
+  }
+
+  & h4 {
+    opacity: 0.5;
+    padding: 1em 0 0 0;
+
+    &:nth-child(2n) {
+      opacity: 1;
+      padding: 0;
+    }
+  }
+}
+
+.notes {
+  background-color: $color-neutral-grey;
+  font-size: 0.8em;
+  padding: 1em;
+
+  & li {
+    margin-bottom: 0.5em;
+  }
+}
+
+// Forms
+
+.form-style {
+  border-radius: 4px;
+  border-style: none;
+  font-size: 1em;
+  min-height: 3rem;
+  padding: 0 1em;
+  width: 100%;
+  margin: 1em 0;
+
+  @media (min-width: $md) {
+    width: auto;
+  }
+}
+
+input {
+  @extend .form-style;
+  @include shadow-inset();
+  background-color: $color-neutral-grey;
+  font-family: "Lato-Regular";
+}
+
+button {
+  @extend .form-style;
+  @include shadow-outline();
+  background-color: $color-core-blue;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Lato-Bold";
+
+  &:hover {
+    background-color: lighten( $color-core-blue, 5% );
+  }
+
+  &:active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    top: 1px;
+  }
+
+  @media (min-width: $xl) {
+    margin: 0 1em;
+  }
+}
