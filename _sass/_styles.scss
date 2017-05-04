@@ -115,59 +115,35 @@ h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.953em;
+  font-size: 2.441em;
   margin: 1em 0;
-
-  @media (min-width: $md) {
-    font-size: 2.441em;
-  }
 }
 
 h2 {
   border-top: 4px solid #333;
-  font-size: 1.563em;
+  font-size: 1.953em;
   margin: 1em 0;
   padding-top: 1em;
-
-  @media (min-width: $md) {
-    font-size: 1.953em;
-  }
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1.563em;
   margin: 1em 0;
-
-  @media (min-width: $md) {
-    font-size: 1.563em;
-  }
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.25em;
   margin: 0.25em 0;
-
-  @media (min-width: $md) {
-    font-size: 1.25em;
-  }
 }
 
 h5 {
-  font-size: 0.8em;
-
-  @media (min-width: $md) {
-    font-size: 1em;
-  }
+  font-size: 1em;
 }
 
 h6 {
-  font-size: 0.64em;
+  font-size: 0.8em;
   letter-spacing: 0.125em;
   text-transform: uppercase;
-
-  @media (min-width: $md) {
-    font-size: 0.8em;
-  }
 }
 
 // Body copy
