@@ -22,16 +22,11 @@ $xl: 48rem;
 
 // Mixins
 
-@mixin container() {
-  margin: 0 auto 4em auto;
-  max-width: $xl;
-  padding: 0.5rem;
-}
-
-@mixin shadow-outline() {
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 }
 
 @mixin shadow-inset() {
@@ -40,10 +35,18 @@ $xl: 48rem;
   box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 
+@mixin shadow-outline() {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
+
 // Layout
 
 .container {
-  @include container();
+  margin: 0 auto 4em auto;
+  max-width: $xl;
+  padding: 0.5rem;
 }
 
 .palette {
@@ -146,12 +149,33 @@ h6 {
   text-transform: uppercase;
 }
 
+.headings {
+
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    margin: 0 0 0.5em 0;
+  }
+
+  & h2 {
+    border: none;
+    padding: 0;
+  }
+
+  & h4 {
+    opacity: 0.5;
+    padding: 1em 0 0 0;
+
+    &:nth-child(2n) {
+      opacity: 1;
+      padding: 0;
+    }
+  }
+}
+
 // Body copy
 
 p {
   margin: 1em 0;
 }
-
 
 ul, ol {
   padding: 0.5em 0 0.5em 0.5em;
@@ -179,28 +203,6 @@ ul, ol {
   }
 }
 
-.headings {
-
-  & h1, & h2, & h3, & h4, & h5, & h6 {
-    margin: 0 0 0.5em 0;
-  }
-
-  & h2 {
-    border: none;
-    padding: 0;
-  }
-
-  & h4 {
-    opacity: 0.5;
-    padding: 1em 0 0 0;
-
-    &:nth-child(2n) {
-      opacity: 1;
-      padding: 0;
-    }
-  }
-}
-
 .notes {
   background-color: $color-neutral-grey;
   font-size: 0.8em;
@@ -214,7 +216,7 @@ ul, ol {
 // Forms
 
 .form-style {
-  border-radius: 4px;
+  @include border-radius(4px);
   border-style: none;
   font-size: 1em;
   min-height: 3rem;
@@ -225,13 +227,6 @@ ul, ol {
   @media (min-width: $md) {
     width: auto;
   }
-}
-
-input {
-  @extend .form-style;
-  @include shadow-inset();
-  background-color: $color-neutral-grey;
-  font-family: "Lato-Regular";
 }
 
 button {
@@ -257,4 +252,11 @@ button {
   @media (min-width: $xl) {
     margin: 0 1em;
   }
+}
+
+input {
+  @extend .form-style;
+  @include shadow-inset();
+  background-color: $color-neutral-grey;
+  font-family: "Lato-Regular";
 }
